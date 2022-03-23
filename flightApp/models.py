@@ -14,11 +14,11 @@ class Flight(models.Model):
 class Passenger(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
-    middle_name = models.CharField(max_length=20)
+    middle_name = models.CharField(max_length=20, blank=True)
     email = models.EmailField()
     phone = models.CharField(max_length=10)
 
 
 class Reservation(models.Model):
-    flight = models.OneToOneField(Flight, on_delete=models.CASCADE)
+    flight = models.ForeignKey(Flight, on_delete=models.CASCADE)
     Passenger = models.OneToOneField(Passenger, on_delete=models.CASCADE)
