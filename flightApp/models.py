@@ -13,6 +13,9 @@ class Flight(models.Model):
     date_of_departure = models.DateField()
     estimated_time_of_departure = models.TimeField()
 
+    def get_flight(self):
+        return self.flight_number + ' from ' + self.departure_city + ' to ' + self.arrival_city
+
 
 class Passenger(models.Model):
     first_name = models.CharField(max_length=20)

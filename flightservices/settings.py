@@ -45,7 +45,9 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':[
     'rest_framework.authentication.TokenAuthentication'
-    ]
+    ],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+
 }
 
 MIDDLEWARE = [
